@@ -8,14 +8,15 @@ is_running = True
 
 while is_running:
     print("Starting Game")
-    choices = ["rock","paper", "scissors"]
+    choices = ["rock :R","paper:P", "scissors:S"]
     #player = input("rock, paper, or scissors \n")
-    
+    player = input("R,P or S \n")
+    computer = random.choice(choices)
 
     try:
-        computer = random.choice(choices)
+        
         #print(computer)
-        player = input("rock, paper, or scissors \n").lower()
+        while player in choices
         #print(player)    
         is_running = False
 
