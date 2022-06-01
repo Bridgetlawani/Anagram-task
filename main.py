@@ -1,21 +1,76 @@
-# Check if a word is an anagrams
-# Example:
-# find_anagrams("hello") --> False
-# find_anagrams("racecar") --> True
+import random
 
 
-def find_anagrams(word1, word2):
-    # [assignment] Add your code here
-    # find_anagrams["earth", "heart"]
-    word1 = word1.strip()
-    word2 = word2.strip()
+print("Welcome")
+is_running = True
 
-    if(sorted(word1) == sorted(word2)):
-        print(True)
-    else:
-        print('false')
 
-        # return True
-        #print(find_anagrams('earth', 'heart'))
-find_anagrams('peach', 'cheap')
+
+while is_running:
+    print("Starting Game")
+    choices = ["rock","paper", "scissors"]
+    #player = input("rock, paper, or scissors \n")
+    
+
+    try:
+        computer = random.choice(choices)
+        #print(computer)
+        player = input("rock, paper, or scissors \n").lower()
+        #print(player)    
+        is_running = False
+
+    except:
+        player not in choices
+        print("Invalid Input, Try Again!")
+        continue
+
+    if player == computer:
+       print("computer: ",computer)
+       print("player: ",player)
+       print("Tie!")
+
+    elif player == "rock":
+        if computer == "paper":
+           print("computer: ",computer)
+           print("player: ",player)
+           print("You lose!")
+
+    elif player == "paper":
+       if computer == "rock":
+          print("computer: ",computer)
+          print("player: ",player)
+          print("You win")
+
+    elif player == "scissors":
+       if computer == "paper":
+          print("computer: ",computer)
+          print("player: ",player)
+          print("You win!")
+
+    elif player == "paper":
+        if computer == "scissors":
+          print("computer: ",computer)
+          print("player: ",player)
+          print("You lose!")
+
+    elif player == "scissors":
+        if computer == "rock":
+          print("computer: ",computer)
+          print("player: ",player)
+          print("You lose!")
+
+    elif player == "rock":
+        if computer == "scisoors":
+          print("computer: ",computer)
+          print("player: ",player)
+          print("You win!")
+
+play_again = input("Would you like to play again? [yes/no]: ")
+if play_again == "yes":
+    is_running = True
+
+if play_again == "no":
+    print("Thank you for playing")
+    is_running = False
+
 
